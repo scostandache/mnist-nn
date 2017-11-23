@@ -14,9 +14,19 @@ class Weight(np.float64):
     
 class Neuron(np.float64):
     
-    pass
-    #def __new__(cls, n_in)
-    #def __init__(self, n_in):
+    def __init__(self, value=None):
+        self.val = value
+        
+    def __mul__(self, other):
+        res = self.val * other.val
+        self.val = res
+    
+    
+    
+        
+    
+    
+   # def __init__(self, n_in):
         #self.IN_WEIGHTS = np.array([Weight(r) for r in np.random.normal(0, 1.0/np.sqrt(n_in), n_in)])
         
     

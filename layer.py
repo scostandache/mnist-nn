@@ -14,6 +14,10 @@ class Layer(np.ndarray):
            neuron.WEIGHTS_IN = np.array([Weight(r, to_neuron = neuron) for r in np.random.normal(0, 1.0/np.sqrt(self.size), self.size)], dtype=object)
            for (w,f_neuron) in zip(neuron.WEIGHTS_IN,self):
                w.from_neuron = f_neuron
+    
+    def get_values(self):
+        return np.array([neuron.val for neuron in self])
+    
             
     
            
