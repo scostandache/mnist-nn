@@ -3,7 +3,6 @@ from neuron import Neuron, Weight
 import numpy as np
 import types
 import activations
-import functools
 
 class Layer(np.ndarray):
         

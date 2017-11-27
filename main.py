@@ -5,6 +5,7 @@ import activations
 import timeit
 import _pickle as cPickle, gzip
 import data_funcs
+import cost_funcs
 
 
 f = gzip.open('mnist.pkl.gz', 'rb')
@@ -36,3 +37,4 @@ print(end-start)
 
 a=np.array([1,2,3,4,5])
 print(a[-2::-1])
+
