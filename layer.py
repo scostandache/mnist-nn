@@ -3,6 +3,7 @@ from neuron import Neuron, Weight
 import numpy as np
 import types
 import activations
+import functools
 
 class Layer(np.ndarray):
         
@@ -32,9 +33,9 @@ class Layer(np.ndarray):
         
         if(self.dropout_prob != None):
             self.dropout_arr = np.random.binomial(1, 1.0 - self.dropout_prob, size=(self.size,))/(1.0 - self.dropout_prob)
-        
+                
         for neuron in next_layer:
-            neuron.val = sum(self.get_neuron_values()*self.dropout_arr*neuron.get_weights_values())
+            neuron.val = np.sum(self.get_neuron_values()*self.dropout_arr*neuron.get_weights_values())
 
         
     def dropout(self):

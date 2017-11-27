@@ -20,6 +20,7 @@ class Neuron(np.float64):
     def __init__(self, value=None):
         self.val = value
         self.WEIGHTS_IN=np.array([])
+        self.error = 0.0
         self.drop = 1
         
         
@@ -28,7 +29,7 @@ class Neuron(np.float64):
         self.val = res
         
     def get_weights_values(self):
-        return np.array([weight.val for weight in self.WEIGHTS_IN])
+        return np.array([weight.val for weight in self.WEIGHTS_IN], dtype=np.float64)
   
    # def __init__(self, n_in):
         #self.IN_WEIGHTS = np.array([Weight(r) for r in np.random.normal(0, 1.0/np.sqrt(n_in), n_in)])
