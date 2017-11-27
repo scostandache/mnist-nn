@@ -14,6 +14,7 @@ class Weight(np.float64):
         self.gradient = 0.0
         self.rms_cache = 0.0
         self.rms = 0.0
+        self.velocity = 0.0
         
         
     
@@ -33,6 +34,9 @@ class Neuron(np.float64):
         
     def get_weights_values(self):
         return np.array([weight.val for weight in self.WEIGHTS_IN], dtype=np.float64)
+    
+    def get_out_weights_values(self):
+        return np.array([weight.val for weight in self.WEIGHTS_OUT], dtype=np.float64)
   
    # def __init__(self, n_in):
         #self.IN_WEIGHTS = np.array([Weight(r) for r in np.random.normal(0, 1.0/np.sqrt(n_in), n_in)])
