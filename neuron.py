@@ -6,6 +6,7 @@ class Weight(np.float64):
     
     def __init__(self, value, from_neuron=None, to_neuron=None):
         self.val = value
+        self.act = 0.0
         self.cost = 0.0
         self.momentum = 0.0
         self.from_neuron = from_neuron
@@ -13,6 +14,7 @@ class Weight(np.float64):
         self.gradient = 0.0
         self.rms_cache = 0.0
         self.rms = 0.0
+        
         
     
 class Neuron(np.float64):
@@ -22,6 +24,7 @@ class Neuron(np.float64):
         self.WEIGHTS_IN=np.array([])
         self.error = 0.0
         self.drop = 1
+        self.WEIGHTS_OUT = np.array([])
         
         
     def __mul__(self, other):

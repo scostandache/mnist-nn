@@ -1,5 +1,7 @@
 from neuron import Neuron
 from layer import Layer
+from network import Network
+
 import numpy as np
 import activations
 import timeit
@@ -21,6 +23,7 @@ OL = Layer(size = 10, activation = activations.softmax)
 IL.connect_to(HL)
 HL.connect_to(OL)
 
+
 IL.load_data(train_set[0][0])
 
 start = timeit.default_timer()
@@ -35,6 +38,15 @@ end = timeit.default_timer()
 
 print(end-start)
 
-a=np.array([1,2,3,4,5])
-print(a[-2::-1])
+a=np.array([1,2,3,4,5,6,7])
+
+for c, d in zip(a[1:], a[2:]):
+    print (c,d)
+
+######################
+    
+NN = Network(np.array([IL,HL,OL]), target_activation = data_funcs.softmax, cost_func = cost_funcs.cross_entropy)
+
+
+
 
